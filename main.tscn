@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://phlip81vdlj5"]
+
+[ext_resource type="Texture2D" uid="uid://dnr4rqqta1n0u" path="res://foso.png" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://hsfbsh73locr" path="res://player.tscn" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://boksxx32ss6j3" path="res://knight.tscn" id="3_lquwl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24l1w"]
+size = Vector2(1436, 164.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggfel"]
+size = Vector2(4.629166, 23.116667)
+
+[node name="Main" type="Node2D" unique_id=1962394877]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1884619520]
+position = Vector2(564, 371)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_h2yge")
+
+[node name="Player" parent="." unique_id=659096259 instance=ExtResource("2_1bvp3")]
+position = Vector2(257, 578)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=668353706]
+position = Vector2(571, 371)
+
+[node name="Limits" type="StaticBody2D" parent="." unique_id=71124017]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits" unique_id=1948986086]
+position = Vector2(566, 772)
+shape = SubResource("RectangleShape2D_24l1w")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Limits" unique_id=329237781]
+position = Vector2(-77.437485, 344.5)
+scale = Vector2(30, 30)
+shape = SubResource("RectangleShape2D_ggfel")
+debug_color = Color(0.31463516, 0.49276412, 1, 0.41960785)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Limits" unique_id=1455769635]
+position = Vector2(1203.625, 338.25)
+scale = Vector2(30, 30)
+shape = SubResource("RectangleShape2D_ggfel")
+debug_color = Color(0.31463516, 0.49276412, 1, 0.41960785)
+
+[node name="Caballero" parent="." unique_id=1706522589 instance=ExtResource("3_lquwl")]
+position = Vector2(764, 628)
